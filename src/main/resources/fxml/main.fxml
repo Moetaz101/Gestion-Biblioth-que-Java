@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+
+<VBox spacing="10" xmlns:fx="http://javafx.com/fxml" fx:controller="org.example.gestionbibliotheque.controller.MainController" stylesheets="@../css/light-blue-theme.css">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <TabPane VBox.vgrow="ALWAYS">
+        <Tab text="Livres" closable="false">
+            <VBox spacing="10">
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <TextField fx:id="titreField" promptText="Titre du livre"/>
+                    <TextField fx:id="auteurField" promptText="Auteur"/>
+                    <TextField fx:id="nbExemplairesField" promptText="Nombre d'exemplaires"/>
+                    <Button text="Ajouter Livre" onAction="#ajouterLivre"/>
+                </HBox>
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <TextField fx:id="rechercheLivreField" promptText="Rechercher un livre..."/>
+                    <Button text="Rechercher" onAction="#rechercherLivre"/>
+                </HBox>
+                <TableView fx:id="livresTable" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="idColumn" text="ID"/>
+                        <TableColumn fx:id="titreColumn" text="Titre"/>
+                        <TableColumn fx:id="auteurColumn" text="Auteur"/>
+                        <TableColumn fx:id="nbExemplairesColumn" text="Exemplaires"/>
+                    </columns>
+                </TableView>
+                <HBox spacing="10" alignment="CENTER_RIGHT">
+                    <Button text="Modifier" onAction="#modifierLivre"/>
+                    <Button text="Supprimer" onAction="#supprimerLivre"/>
+                </HBox>
+            </VBox>
+        </Tab>
+        
+        <Tab text="Adhérents" closable="false">
+            <VBox spacing="10">
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <TextField fx:id="nomField" promptText="Nom de l'adhérent"/>
+                    <TextField fx:id="prenomField" promptText="Prénom de l'adhérent"/>
+                    <TextField fx:id="emailField" promptText="Email"/>
+                    <TextField fx:id="telephoneField" promptText="Téléphone"/>
+                    <Button text="Ajouter Adhérent" onAction="#ajouterAdherent"/>
+                </HBox>
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <TextField fx:id="rechercheAdherentField" promptText="Rechercher un adhérent..."/>
+                    <Button text="Rechercher" onAction="#rechercherAdherent"/>
+                </HBox>
+                <TableView fx:id="adherentsTable" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="adherentIdColumn" text="ID"/>
+                        <TableColumn fx:id="nomColumn" text="Nom"/>
+                        <TableColumn fx:id="prenomColumn" text="Prénom"/>
+                        <TableColumn fx:id="emailColumn" text="Email"/>
+                        <TableColumn fx:id="telephoneColumn" text="Téléphone"/>
+                    </columns>
+                </TableView>
+                <HBox spacing="10" alignment="CENTER_RIGHT">
+                    <Button text="Modifier" onAction="#modifierAdherent"/>
+                    <Button text="Supprimer" onAction="#supprimerAdherent"/>
+                </HBox>
+            </VBox>
+        </Tab>
+        
+        <Tab text="Emprunts" closable="false">
+            <VBox spacing="10">
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <ComboBox fx:id="livreComboBox" promptText="Sélectionner un livre"/>
+                    <ComboBox fx:id="adherentComboBox" promptText="Sélectionner un adhérent"/>
+                    <Button text="Créer Emprunt" onAction="#creerEmprunt"/>
+                </HBox>
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <ComboBox fx:id="filtreEmpruntComboBox" promptText="Filtrer les emprunts...">
+                        <items>
+                            <FXCollections fx:factory="observableArrayList">
+                                <String fx:value="Tous"/>
+                                <String fx:value="En cours"/>
+                                <String fx:value="Retournés"/>
+                            </FXCollections>
+                        </items>
+                    </ComboBox>
+                    <Button text="Filtrer" onAction="#filtrerEmprunts"/>
+                </HBox>
+                <TableView fx:id="empruntsTable" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="empruntIdColumn" text="ID"/>
+                        <TableColumn fx:id="dateEmpruntColumn" text="Date d'emprunt"/>
+                        <TableColumn fx:id="dateRetourPrevueColumn" text="Date de retour prévue"/>
+                        <TableColumn fx:id="dateRetourEffectiveColumn" text="Date de retour effective"/>
+                        <TableColumn fx:id="livreColumn" text="Livre"/>
+                        <TableColumn fx:id="adherentColumn" text="Adhérent"/>
+                    </columns>
+                </TableView>
+                <HBox spacing="10" alignment="CENTER_RIGHT">
+                    <Button text="Retourner le livre" onAction="#retournerLivre"/>
+                    <Button text="Supprimer" onAction="#supprimerEmprunt"/>
+                </HBox>
+            </VBox>
+        </Tab>
+    </TabPane>
+</VBox>

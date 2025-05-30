@@ -1,0 +1,138 @@
+/* Light Blue Theme for Library Management Application */
+
+/* Root styles and color variables */
+.root {
+    -fx-background-color: #f0f8ff; /* AliceBlue */
+    -fx-font-family: 'Segoe UI', Arial, sans-serif;
+    -fx-font-size: 12px;
+}
+
+/* TabPane styling */
+.tab-pane {
+    -fx-background-color: #e6f2ff;
+    -fx-tab-min-height: 30px;
+}
+
+.tab {
+    -fx-background-color: #b3d9ff;
+    -fx-background-radius: 5 5 0 0;
+    -fx-padding: 5 10 5 10;
+}
+
+.tab:selected {
+    -fx-background-color: #80bfff;
+}
+
+.tab-header-background {
+    -fx-background-color: #cce6ff;
+}
+
+.tab-label {
+    -fx-text-fill: #003366;
+    -fx-font-weight: bold;
+}
+
+/* TableView styling */
+.table-view {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #99ccff;
+    -fx-border-width: 1px;
+}
+
+.table-view .column-header {
+    -fx-background-color: #b3d9ff;
+    -fx-font-weight: bold;
+}
+
+.table-view .column-header-background .label {
+    -fx-text-fill: #003366;
+}
+
+.table-row-cell {
+    -fx-background-color: #ffffff;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: #f0f8ff;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #99ccff;
+    -fx-text-fill: #003366;
+}
+
+/* Button styling */
+.button {
+    -fx-background-color: #4da6ff;
+    -fx-text-fill: white;
+    -fx-background-radius: 4px;
+    -fx-padding: 5 15 5 15;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #0080ff;
+}
+
+.button:pressed {
+    -fx-background-color: #0066cc;
+}
+
+/* TextField styling */
+.text-field, .combo-box {
+    -fx-background-color: white;
+    -fx-border-color: #99ccff;
+    -fx-border-radius: 3px;
+    -fx-padding: 5px;
+}
+
+.text-field:focused, .combo-box:focused {
+    -fx-border-color: #0080ff;
+    -fx-border-width: 2px;
+}
+
+/* ComboBox styling */
+.combo-box {
+    -fx-background-color: white;
+}
+
+.combo-box .list-cell {
+    -fx-text-fill: #003366;
+}
+
+.combo-box-popup .list-view {
+    -fx-background-color: white;
+    -fx-border-color: #99ccff;
+}
+
+.combo-box-popup .list-view .list-cell:hover {
+    -fx-background-color: #cce6ff;
+}
+
+.combo-box-popup .list-view .list-cell:selected {
+    -fx-background-color: #99ccff;
+}
+
+/* Label styling */
+.label {
+    -fx-text-fill: #003366;
+}
+
+/* Dialog styling */
+.dialog-pane {
+    -fx-background-color: #f0f8ff;
+}
+
+.dialog-pane .header-panel {
+    -fx-background-color: #cce6ff;
+}
+
+.dialog-pane .header-panel .label {
+    -fx-font-weight: bold;
+    -fx-text-fill: #003366;
+}
+
+/* Alert styling */
+.alert {
+    -fx-background-color: #f0f8ff;
+}
