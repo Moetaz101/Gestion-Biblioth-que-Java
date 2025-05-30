@@ -119,7 +119,3 @@ L'application inclut une validation complète des données :
 - Notifications pour les retards
 - Export des données en différents formats (PDF, Excel)
 - Interface multilingue
-
-## Licence
-
-Ce projet est sous licence [votre licence] 
